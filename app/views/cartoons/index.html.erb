@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cartoons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cartoon url</th>
+      <th>Rating</th>
+      <th>Views</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cartoons.each do |cartoon| %>
+      <tr>
+        <td><%= cartoon.cartoon_url %></td>
+        <td><%= cartoon.rating %></td>
+        <td><%= cartoon.views %></td>
+        <td><%= cartoon.category %></td>
+        <td><%= link_to 'Show', cartoon %></td>
+        <td><%= link_to 'Edit', edit_cartoon_path(cartoon) %></td>
+        <td><%= link_to 'Destroy', cartoon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cartoon', new_cartoon_path %>

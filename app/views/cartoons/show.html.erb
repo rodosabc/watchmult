@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cartoon url:</strong>
+  <%= @cartoon.cartoon_url %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @cartoon.rating %>
+</p>
+
+<p>
+  <strong>Views:</strong>
+  <%= @cartoon.views %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @cartoon.category %>
+</p>
+
+<%= link_to 'Edit', edit_cartoon_path(@cartoon) %> |
+<%= link_to 'Back', cartoons_path %>

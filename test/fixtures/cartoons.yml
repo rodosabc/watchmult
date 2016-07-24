@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cartoon_url: MyString
+  rating: 1.5
+  views: 1
+  category: one
+
+two:
+  cartoon_url: MyString
+  rating: 1.5
+  views: 1
+  category: two
