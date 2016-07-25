@@ -22,15 +22,15 @@ User.create(:email => 'another_admin@example.com',
             :admin => true)
 
 Category.create(:name => 'Мультфильмы')
-Category.create(:name => 'Toy Story', :category_id => Category.find_by(:name => 'Мультфильмы').id)
-Category.create(:name => 'WALL-E', :category_id => Category.find_by(:name => 'Мультфильмы').id)
-Category.create(:name => 'Cars', :category_id => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'Toy Story', :parent => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'WALL-E', :parent => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'Cars', :parent => Category.find_by(:name => 'Мультфильмы').id)
 
 
 Category.create(:name => 'Мультсериалы')
-Category.create(:name => 'Spider-man', :category_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Futurama', :category_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Family guy', :category_id => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Spider-man', :parent => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Futurama', :parent => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Family guy', :parent => Category.find_by(:name => 'Мультсериалы').id)
 
 10.times do |i|
 Cartoon.create!(:title => "Lorem cartoon #{i}",
