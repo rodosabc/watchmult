@@ -1,2 +1,40 @@
-<h1>Watchmult</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+  <div class="container">
+    <div class="catalog">
+      <h2>Популярные мультфильмы</h2>
+      <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <%@random_cartoons.each do |cartoon|%>
+            <div class="item">
+              <div class="info">
+                <p><%=cartoon.title%></p>
+                <ul>
+                  <li><%=cartoon.views%></li>
+                  <li><%=cartoon.rating%></li>
+                  <li><%=cartoon.comments.size%></li>
+                </ul>
+              </div>
+            </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="catalog">
+      <h2>Популярные мультсериалы</h2>
+      <div class="items col-lg-12">
+        <%@random_animated.each do |cartoon|%>
+
+            <div class="item">
+              <%=image_tag(image_url(cartoon.preview))%>
+              <div class="info">
+                <p><%=cartoon.title%></p>
+                <ul>
+                  <li><%=cartoon.views%></li>
+                  <li><%=cartoon.rating%></li>
+                  <li><%=cartoon.comments.size%></li>
+                </ul>
+              </div>
+            </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
