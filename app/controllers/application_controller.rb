@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_nav_categories
-    @categories = Category.where(:category_id => nil)
+    @categories = Category.where(:parent_id => nil)
   end
 end
