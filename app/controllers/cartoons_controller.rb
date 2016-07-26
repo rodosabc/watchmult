@@ -73,4 +73,10 @@ class CartoonsController < ApplicationController
     def cartoon_params
       params.require(:cartoon).permit(:cartoon_url, :rating, :views, :category_id)
     end
+
+=begin
+    def refresh_rating(mark)
+      self.rating +
+    end
+=end
 end

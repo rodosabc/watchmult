@@ -50,7 +50,7 @@ Cartoon.create!(:title => "Lorem cartoon #{i}",
                neque a eleifend. ',
                 :cartoon_url => 'http://vk.com',
                 :views => 123,
-                :rating => 7.3,
+                :rating => 0,
                 :category_id => Category.find_by(:name => 'Cars').id,
                 :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"))
 end
@@ -72,7 +72,7 @@ end
                neque a eleifend. ',
                   :cartoon_url => 'http://vk.com',
                   :views => 123,
-                  :rating => 7.3,
+                  :rating => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 1s').id,
                   :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
 end
@@ -93,7 +93,7 @@ end
                neque a eleifend. ',
                   :cartoon_url => 'http://vk.com',
                   :views => 123,
-                  :rating => 7.3,
+                  :rating => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 2s').id,
                   :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
 end
