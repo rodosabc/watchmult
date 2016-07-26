@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="container">
+    <div class="catalog">
+      <h2><%=@cartoon.title%></h2>
+      <div class="col-lg-10 col-lg-offset-1 video">
+        <div class="panel">
+          <div class="views">Просмотры: <%=@cartoon.views%></div>
+          <div class="rating">
+            <span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+          </div>
+        </div>
+      </div>
+      <div class="description col-lg-8">
+        <p>
+          <%=@cartoon.description%>
+        </p>
 
-<p>
-  <strong>Cartoon url:</strong>
-  <%= @cartoon.cartoon_url %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @cartoon.rating %>
-</p>
-
-<p>
-  <strong>Views:</strong>
-  <%= @cartoon.views %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @cartoon.category %>
-</p>
-
-<%= link_to 'Edit', edit_cartoon_path(@cartoon) %> |
-<%= link_to 'Back', cartoons_path %>
+        <div class="col-lg-12 comments">
+          <h2>Комментарии</h2>
+          <%if @cartoon.comments.any?%>
+          <ul>
+            <%@cartoon.comments.each do |comment|%>
+            <li>
+              <div class="comment">
+                <p><%=comment.name%></p>
+                <p>
+                  <%=comment.body%>
+                </p>
+              </div>
+            </li>
+            <%end%>
+          </ul>
+          <%end%>
+        </div>
+      </div>
+      <div class="playlist col-lg-4">
+        <ul>
+          <a href=""><li><div class="playFromList"><div class="btnPlay"></div></div><span>Название</span></li></a>
+          <a href=""><li><div class="playFromList"><div class="btnPlay"></div></div><span>Название</span></li></a>
+          <a href=""><li><div class="playFromList"><div class="btnPlay"></div></div><span>Название</span></li></a>
+          <a href=""><li><div class="playFromList"><div class="btnPlay"></div></div><span>Название</span></li></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

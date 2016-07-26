@@ -10,8 +10,8 @@
         <%=link_to root_path do%>
             <li>Главная</li>
         <%end%>
-        <% @categories.each do |category| %>
-              <%=link_to category_path(category) do%>
+        <% @two_categories.each do |category| %>
+              <%=link_to category_categories_path(category) do%>
                   <li><%=category.name%></li>
               <%end%>
         <%end%>

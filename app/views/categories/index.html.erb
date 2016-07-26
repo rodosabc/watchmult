@@ -1,2 +1,28 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<div class="row">
+  <div class="container">
+    <div class="catalog">
+      <h2><%=@category.name%></h2>
+      <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <%@categories.each do |subcategory|%>
+            <%if subcategory.cartoons.any?%>
+              <%=link_to category_cartoons_path(subcategory) do%>
+                  <div class="item">
+                    <div class="info">
+                      <p><%=subcategory.name%></p>
+                    </div>
+                  </div>
+              <%end%>
+            <%else%>
+                <%=link_to category_path(subcategory) do%>
+                    <div class="item">
+                      <div class="info">
+                        <p><%=subcategory.name%></p>
+                      </div>
+                    </div>
+                <%end%>
+            <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

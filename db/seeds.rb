@@ -22,15 +22,17 @@ User.create(:email => 'another_admin@example.com',
             :admin => true)
 
 Category.create(:name => 'Мультфильмы')
-Category.create(:name => 'Toy Story', :parent_id => Category.find_by(:name => 'Мультфильмы').id)
-Category.create(:name => 'WALL-E', :parent_id => Category.find_by(:name => 'Мультфильмы').id)
-Category.create(:name => 'Cars', :parent_id => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'Toy Story', :category_id => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'WALL-E', :category_id => Category.find_by(:name => 'Мультфильмы').id)
+Category.create(:name => 'Cars', :category_id => Category.find_by(:name => 'Мультфильмы').id)
 
 
 Category.create(:name => 'Мультсериалы')
-Category.create(:name => 'Spider-man', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Futurama', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Family guy', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Spider-man', :category_id => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Spider-man 1s', :category_id => Category.find_by(:name => 'Spider-man').id)
+Category.create(:name => 'Spider-man 2s', :category_id => Category.find_by(:name => 'Spider-man').id)
+Category.create(:name => 'Futurama', :category_id => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Family guy', :category_id => Category.find_by(:name => 'Мультсериалы').id)
 
 10.times do |i|
 Cartoon.create!(:title => "Lorem cartoon #{i}",
@@ -53,9 +55,10 @@ Cartoon.create!(:title => "Lorem cartoon #{i}",
                 :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"))
 end
 
-10.times do |i|
-  Cartoon.create!(:title => "Lorem series #{i}",
-                 :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+4.times do |i|
+  Cartoon.create!(:title => "Lorem spider #{i}",
+                  :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
               nisl erat, lacinia et enim vitae, vulputate elementum ante. Pellentesque habitant
                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
@@ -67,9 +70,30 @@ end
               tincidunt nunc vel consequat. Nam venenatis, est quis sagittis rutrum, arcu
               eros faucibus felis, vitae dapibus mi sem non lacus. Aenean euismod pulvinar
                neque a eleifend. ',
-                 :cartoon_url => 'http://vk.com',
-                 :views => 123,
-                 :rating => 7.3,
-                 :category_id => Category.find_by(:name => 'Spider-man').id,
-                 :preview => File.new("#{Rails.root}/app/assets/images/eric.jpg"))
+                  :cartoon_url => 'http://vk.com',
+                  :views => 123,
+                  :rating => 7.3,
+                  :category_id => Category.find_by(:name => 'Spider-man 1s').id,
+                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
+end
+
+4.times do |i|
+  Cartoon.create!(:title => "Lorem spider #{i} #{i}",
+                  :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
+              nisl erat, lacinia et enim vitae, vulputate elementum ante. Pellentesque habitant
+               morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
+               eget pellentesque enim. Donec sagittis odio vel elit semper tempor. Suspendisse porta
+               sem velit. Vivamus ornare volutpat tellus ac vehicula. Cras rhoncus lectus ut
+              volutpat eleifend. Maecenas ornare lacinia ligula, iaculis luctus ex ultricies at.
+              Duis et mauris in metus suscipit venenatis. Maecenas id placerat mauris. Cras
+              dictum dictum lectus, at tristique sapien accumsan sit amet. Quisque aliquam
+              tincidunt nunc vel consequat. Nam venenatis, est quis sagittis rutrum, arcu
+              eros faucibus felis, vitae dapibus mi sem non lacus. Aenean euismod pulvinar
+               neque a eleifend. ',
+                  :cartoon_url => 'http://vk.com',
+                  :views => 123,
+                  :rating => 7.3,
+                  :category_id => Category.find_by(:name => 'Spider-man 2s').id,
+                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
 end

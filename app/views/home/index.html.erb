@@ -4,6 +4,7 @@
       <h2>Популярные мультфильмы</h2>
       <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <%@random_cartoons.each do |cartoon|%>
+            <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
             <div class="item">
               <div class="info">
                 <p><%=cartoon.title%></p>
@@ -14,6 +15,7 @@
                 </ul>
               </div>
             </div>
+            <%end%>
         <%end%>
       </div>
     </div>
@@ -21,7 +23,7 @@
       <h2>Популярные мультсериалы</h2>
       <div class="items col-lg-12">
         <%@random_animated.each do |cartoon|%>
-
+            <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
             <div class="item">
               <%=image_tag(image_url(cartoon.preview))%>
               <div class="info">
@@ -33,6 +35,7 @@
                 </ul>
               </div>
             </div>
+            <%end%>
         <%end%>
       </div>
     </div>
