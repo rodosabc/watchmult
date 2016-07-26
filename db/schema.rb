@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726022719) do
+ActiveRecord::Schema.define(version: 20160726183546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +19,14 @@ ActiveRecord::Schema.define(version: 20160726022719) do
     t.string   "title"
     t.string   "description"
     t.string   "cartoon_url"
-    t.float    "rating"
     t.integer  "views"
     t.integer  "category_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "preview_file_name"
     t.string   "preview_content_type"
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
-    t.integer  "rated",                default: 0
     t.index ["category_id"], name: "index_cartoons_on_category_id", using: :btree
   end
 
@@ -48,6 +46,19 @@ ActiveRecord::Schema.define(version: 20160726022719) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cartoon_id"], name: "index_comments_on_cartoon_id", using: :btree
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.float    "value",      default: 0.0
+    t.integer  "one",        default: 0
+    t.integer  "two",        default: 0
+    t.integer  "three",      default: 0
+    t.integer  "four",       default: 0
+    t.integer  "five",       default: 0
+    t.integer  "cartoon_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["cartoon_id"], name: "index_ratings_on_cartoon_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +82,5 @@ ActiveRecord::Schema.define(version: 20160726022719) do
   add_foreign_key "cartoons", "categories"
   add_foreign_key "categories", "categories"
   add_foreign_key "comments", "cartoons"
+  add_foreign_key "ratings", "cartoons"
 end

@@ -10,6 +10,7 @@ User.delete_all
 Comment.delete_all
 Cartoon.delete_all
 Category.delete_all
+Rating.delete_all
 
 
 User.create(:email => 'admin@example.com',
@@ -35,6 +36,7 @@ Category.create(:name => 'Futurama', :category_id => Category.find_by(:name => '
 Category.create(:name => 'Family guy', :category_id => Category.find_by(:name => 'Мультсериалы').id)
 
 10.times do |i|
+
 Cartoon.create!(:title => "Lorem cartoon #{i}",
                 :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
@@ -50,9 +52,9 @@ Cartoon.create!(:title => "Lorem cartoon #{i}",
                neque a eleifend. ',
                 :cartoon_url => 'http://vk.com',
                 :views => 123,
-                :rating => 0,
                 :category_id => Category.find_by(:name => 'Cars').id,
                 :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"))
+  Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Lorem cartoon #{i}").id)
 end
 
 
@@ -72,9 +74,9 @@ end
                neque a eleifend. ',
                   :cartoon_url => 'http://vk.com',
                   :views => 123,
-                  :rating => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 1s').id,
                   :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
+  Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Lorem spider #{i}").id)
 end
 
 4.times do |i|
@@ -93,7 +95,7 @@ end
                neque a eleifend. ',
                   :cartoon_url => 'http://vk.com',
                   :views => 123,
-                  :rating => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 2s').id,
                   :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
+  Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Lorem spider #{i} #{i}").id)
 end

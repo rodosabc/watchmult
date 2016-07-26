@@ -12,6 +12,7 @@ class CartoonsController < ApplicationController
   # GET /cartoons/1.json
   def show
     @comment = Comment.new
+    @rating = @cartoon.rating
   end
 
   # GET /cartoons/new
@@ -27,7 +28,7 @@ class CartoonsController < ApplicationController
   # POST /cartoons.json
   def create
     @cartoon = Cartoon.new(cartoon_params)
-
+    @cartoon.rating = Rating.create
     respond_to do |format|
       if @cartoon.save
         format.html { redirect_to @cartoon, notice: 'Cartoon was successfully created.' }
@@ -71,12 +72,6 @@ class CartoonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cartoon_params
-      params.require(:cartoon).permit(:cartoon_url, :rating, :views, :category_id)
+      params.require(:cartoon).permit(:cartoon_url,:views,:category_id,:rating)
     end
-
-=begin
-    def refresh_rating(mark)
-      self.rating +
-    end
-=end
 end

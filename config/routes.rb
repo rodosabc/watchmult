@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root :to => 'home#index'
   resources :cartoons do
     resources :comments
+    resources :ratings, only:[:update]
   end
 
   devise_for :users

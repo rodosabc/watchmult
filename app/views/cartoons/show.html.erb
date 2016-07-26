@@ -5,6 +5,7 @@
       <div class="col-lg-10 col-lg-offset-1 video">
         <div class="panel">
           <div class="views">Просмотры: <%=@cartoon.views%></div>
+          <%=number_with_precision(@rating.value,precision: 1)%>
           <div class="rating">
             <%= render 'five_stars'%>
           </div>
