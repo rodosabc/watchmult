@@ -12,11 +12,6 @@ class CommentsController < ApplicationController
   def show
   end
 
-  # GET /comments/new
-  def new
-    @comment = Comment.new
-  end
-
   # GET /comments/1/edit
   def edit
   end
@@ -24,14 +19,15 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-
+    @cartoon = Cartoon.find(params[:cartoon_id])
+    @comment = @cartoon.comments.new(comment_params)
+    category = @cartoon.category
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to category_cartoon_path(category,@cartoon), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: 'Comment was not successfully created.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +65,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:body, :cartoon_id, :user_id)
+      params.require(:comment).permit(:name,:email,:body, :cartoon_id)
     end
 end

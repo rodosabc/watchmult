@@ -11,7 +11,7 @@ class CartoonsController < ApplicationController
   # GET /cartoons/1
   # GET /cartoons/1.json
   def show
-
+    @comment = Comment.new
   end
 
   # GET /cartoons/new

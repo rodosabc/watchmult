@@ -1,0 +1,19 @@
+<div class="formComment">
+  <%=render :partial => 'comments/new', :object => @comment %>
+</div>
+<h2>Комментарии</h2>
+<%if @cartoon.comments.any?%>
+    <ul>
+      <%@cartoon.comments.each do |comment|%>
+          <li>
+            <div class="comment">
+              <p><%=comment.name%></p>
+              <p>
+                <%=comment.body%>
+              </p>
+            </div>
+          </li>
+      <%end%>
+    </ul>
+<%end%>
+

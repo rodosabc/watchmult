@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'home/index'
 
   root :to => 'home#index'
-  resources :comments
+  resources :cartoons do
+    resources :comments
+  end
+
   devise_for :users
   resources :categories,only: [] do
     resources :cartoons, only: [:index,:show]
