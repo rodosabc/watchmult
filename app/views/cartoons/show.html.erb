@@ -3,6 +3,25 @@
     <div class="catalog">
       <h2><%=@cartoon.title%></h2>
       <div class="col-lg-10 col-lg-offset-1 video">
+
+        <video id="video">
+          <source src="<%=video_url('02 - Javascript Resources.mp4')%>" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+        <div id="controls">
+                  <span id="playpause" class="paused playVideo">
+                    <%=image_tag(image_url('media-play-symbol.svg'))%>
+                  </span>
+                  <span id="progress">
+                    <span id="total">
+                        <span id="buffered"><span id="current">​</span></span>
+                    </span>
+                  </span>
+                  <span id="time">
+                    <span id="currenttime">00:00</span> /
+                    <span id="duration">00:00</span>
+                  </span>
+        </div>
+
         <div class="panel">
           <div class="views">Просмотры: <%=@cartoon.views%></div>
           <%=number_with_precision(@rating.value,precision: 1)%>
