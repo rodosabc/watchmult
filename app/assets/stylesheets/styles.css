@@ -1,379 +1,394 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
 
 *{
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .row{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h2{
-    margin-left: 15px;
-    margin-bottom: 5px;
-    font-size: 2em;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 2em;
 }
 
 .nav-main{
-    background: #f8ab05;
-    height: 70px;
-    box-shadow: -2px 0 7px 2px  rgba(153,153,153,0.9);
+  background: #f8ab05;
+  height: 70px;
+  box-shadow: -2px 0 7px 2px  rgba(153,153,153,0.9);
 }
 
 .nav-main .container div{
-    display: inline-block;
+  display: inline-block;
 }
 
 .logo{
-    width: 150px;
+  width: 150px;
 }
 
 .menu ul a{
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 1.3em;
-    height: 55px;
-    width: 130px;
-    text-align: center;
-    padding-top: 9px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.11s ease-out 0.11s;
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.3em;
+  height: 55px;
+  width: 130px;
+  text-align: center;
+  padding-top: 9px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.11s ease-out 0.11s;
 }
 
 .menu ul a:hover{
-    border-bottom: 5px solid #ff6600;
-    text-shadow: 0 0 1px #666666;
+  border-bottom: 5px solid #ff6600;
+  text-shadow: 0 0 1px #666666;
 }
 
 .menu ul a li{
-    list-style-type: none;
+  list-style-type: none;
+}
+
+.catalog{
+    animation: initiate 0.5s ease-in-out;
+}
+
+@keyframes initiate{
+  from { transform: translate(0, 100px);
+          opacity: 0.2;
+       }
+  100% {
+         transform: translate(0,0);
+         opacity: 1;
+      }
 }
 
 .items{
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .item{
-    display: inline-block;
-    width: 30%;
-    height: 170px;
-    margin: 1.5%;
-    background: #00ccff;
-    transition: all 0.2s ease-out 0.2s;
-    z-index: 2;
-    padding: 0;
-    overflow: hidden;
-    cursor: pointer;
+  display: inline-block;
+  width: 30%;
+  height: 170px;
+  margin: 1.5%;
+  background: #00ccff;
+  transition: all 0.2s ease-out 0.2s;
+  z-index: 2;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .item:hover{
-    transform: scale(1.1, 1.1);
-    box-shadow: -2px 5px 7px 2px  rgba(153,153,153,0.9);
+  transform: scale(1.1, 1.1);
+  box-shadow: -2px 5px 7px 2px  rgba(153,153,153,0.9);
 }
 
 .info{
-    margin-top: 170px;
-    z-index: 1;
-    height: 80px;
-    transform: translateY(-40px);
-    background: rgba(0,0,0,0.5);
-    transition: all 0.2s ease-out 0.2s;
+  margin-top: 170px;
+  z-index: 1;
+  height: 80px;
+  transform: translateY(-40px);
+  background: rgba(0,0,0,0.5);
+  transition: all 0.2s ease-out 0.2s;
 }
 
 
 .item:hover > .info{
-    transform: translateY(-79px);
+  transform: translateY(-79px);
 }
 
 .info p{
-    color: #ffffff;
-    margin-left: 15px;
-    padding-top: 8px;
-    font-size: 1.3em;
+  color: #ffffff;
+  margin-left: 15px;
+  padding-top: 8px;
+  font-size: 1.3em;
 }
 
 .info ul{
-    display: block;
+  display: block;
     width: 260px;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .info ul li{
-    color: #ffffff;
-    display: inline-block;
-    font-size: 1.3em;
-    margin-right: 20%;
-    list-style-type: circle;
+  color: #ffffff;
+  display: inline;
+  font-size: 1em;
+  margin-right: 5%;
+}
+
+.info ul li img{
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
 }
 
 .panel div{
-    display: inline-block;
+  display: inline-block;
 }
 
 .panel{
-    width: 410px;
-    margin: 0 auto;
+  width: 410px;
+  margin: 0 auto;
 }
 
 .rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    font-size: 3em;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 3em;
 }
 .rating > span {
-    display: inline-block;
-    position: relative;
-    width: 0.9em;
-    cursor: pointer;
-    color: #ff9900;
-    top: 5px;
+  display: inline-block;
+  position: relative;
+  width: 0.9em;
+  cursor: pointer;
+  color: #ff9900;
+  top: 5px;
 }
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
-    content: "\2605";
-    position: absolute;
-    color: #ffcc00;
+   content: "\2605";
+   position: absolute;
+   color: #ffcc00;
 }
 
 .views{
-    font-size: 1.6em;
-    margin-right: 30px;
+  font-size: 1.6em;
+  margin-right: 30px;
 }
 
 .comment p:nth-child(1){
-    display: block;
-    padding: 10px;
-    background: #cccccc;
-    color: #ffffff;
-    font-weight: 600;
-    border-radius: 5px 5px 0 0;
-    margin-bottom: -15px;
+  display: block;
+  padding: 10px;
+  background: #cccccc;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: -15px;
 }
 
 .comment p:nth-child(2){
-    display: block;
-    border-bottom: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    padding: 10px;
-    font-weight: 400;
-    border-radius: 0 0 5px 5px;
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  padding: 10px;
+  font-weight: 400;
+  border-radius: 0 0 5px 5px;
 }
 
 .comments ul li{
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .playlist{
-    max-height: 530px;
-    overflow-y: auto;
+  max-height: 530px;
+  overflow-y: auto;
 }
 
 .playlist ul a li{
-    display: block;
-    height: 150px;
-    border: 1px solid #cccccc;
-    position: relative;;
+  display: block;
+  height: 150px;
+  border: 1px solid #cccccc;
+  position: relative;;
 }
 
 .playlist ul a li span{
-    border-radius: 0 5px 0 0;
-    display: block;
-    width: inherit;
-    background: rgba(0,0,0,0.5);
-    color: #ffffff;
-    padding: 5px;
-    font-size: 1.1em;
-    position: absolute;
-    bottom: 0;
+  border-radius: 0 5px 0 0;
+  display: block;
+  width: inherit;
+  background: rgba(0,0,0,0.5);
+  color: #ffffff;
+  padding: 5px;
+  font-size: 1.1em;
+  position: absolute;
+  bottom: 0;
 }
 
 .playFromList{
-    width: 60px;
-    height: 60px;
-    margin: 45px auto;
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    transform: translateY(13px);
-    opacity: 0;
-    transition: all 0.15s ease-out 0.15s;
+  width: 60px;
+  height: 60px;
+  margin: 45px auto;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  transform: translateY(13px);
+  opacity: 0;
+  transition: all 0.15s ease-out 0.15s;
 }
 
 .btnPlay{
-    width: 40px;
-    height: 30px;
-    position: relative;
+  width: 40px;
+  height: 30px;
+  position: relative;
 }
 
 .btnPlay::after{
-    content: " ";
-    position: absolute;
-    left: 18px;
-    bottom: -15px;
-    border: 15px solid transparent;
-    border-left: 30px solid #ffffff;
+  content: " ";
+  position: absolute;
+  left: 18px;
+  bottom: -15px;
+  border: 15px solid transparent;
+  border-left: 30px solid #ffffff;
 }
 
 .playlist ul a:hover .playFromList{
-    transform: translateY(0px);
-    opacity: 0.9;
+  transform: translateY(0px);
+  opacity: 0.9;
 }
 
 .playlist::-webkit-scrollbar-button {
-    display: none;
+  display: none;
 }
 
 .playlist::-webkit-scrollbar-track {
-    background-color:#ffffff;
+background-color:#ffffff;
 }
 
 .playlist::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color:rgba(0,0,0,0.3);
-    box-shadow:0px 1px 1px #fff inset;
+border-radius: 3px;
+background-color:rgba(0,0,0,0.3);
+box-shadow:0px 1px 1px #fff inset;
 }
 
 .playlist::-webkit-resizer{
-    background-image:url('');
-    background-repeat:no-repeat;
-    width:7px;
-    height:0px
+background-repeat:no-repeat;
+width:7px;
+height:0px
 }
 
 .playlist::-webkit-scrollbar{
-    width: 6px;
+width: 6px;
 }
 
 .formComment{
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 .userData{
-    padding: 10px;
-    background: #cccccc;
-    color: #ffffff;
-    border-radius: 5px 5px 0 0;
-    margin-bottom: -15px;
+  padding: 10px;
+  background: #cccccc;
+  color: #ffffff;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: -15px;
 }
 
 .usetText{
-    border-bottom: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-    border-left: 1px solid #cccccc;
-    padding: 0 10px;
-    border-radius: 0 0 5px 5px;
-    text-align: right;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  padding: 0 10px;
+  border-radius: 0 0 5px 5px;
+  text-align: right;
 }
 
 .usetText textarea{
-    margin: 25px 5% 5px 5%;
-    width: 90%;
-    min-height: 80px;
-    border:1px solid #aaa;
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: left !important;
+  margin: 25px 5% 5px 5%;
+  width: 90%;
+  min-height: 80px;
+  border:1px solid #aaa;
+  box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+  border-radius: 5px;
+  padding: 5px;
+  resize: none;
+  text-align: left !important;
 }
 
 *:focus {outline: none;}
 
 .userData input{
-    margin: 0 5px;
-    color: #000000;
-    width: 150px;
-    height: 30px;
-    padding: 5px 8px;
-    border-radius: 5px;
-    border:1px solid #aaa;
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+  margin: 0 5px;
+  color: #000000;
+  width: 150px;
+  height: 30px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border:1px solid #aaa;
+  box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
 }
 
 .userData input:focus, .usetText textarea:focus{
-    background: #fff;
-    border:1px solid #555;
-    box-shadow: 0 0 3px #aaa;
+  background: #fff;
+  border:1px solid #555;
+  box-shadow: 0 0 3px #aaa;
 }
 
 .usetText button{
-    padding: 10px 15px;
-    background-color: #33cc33;
-    background: linear-gradient(top, #68b12f, #50911e);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-right: 40px;
-    /*position: relative;*/
+  padding: 10px 15px;
+  background-color: #33cc33;
+  background: linear-gradient(top, #68b12f, #50911e);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  /*position: relative;*/
 
 }
 
 .usetText button:hover{
-    background-color: #339900;
+  background-color: #339900;
 }
 
 .usetText button:active{
-    background-color: #006600;
-    /*background: linear-gradient(top, #339900, #006600);*/
+  background-color: #006600;
+  /*background: linear-gradient(top, #339900, #006600);*/
 }
 
 .footer{
-    color: #ffffff;
-    width: 100%;
-    display: inline-block;
-    margin-top: 15px;
-    background-color: #f8ab05 !important;
-    /*background: linear-gradient(-45deg, #ffffff, #cccccc) !important;*/
-    margin-bottom: 60px;
-    box-shadow: 0px 2px 7px 2px  rgba(153,153,153,0.9);
+  color: #ffffff;
+  width: 100%;
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #f8ab05 !important;
+  /*background: linear-gradient(-45deg, #ffffff, #cccccc) !important;*/
+  margin-bottom: 60px;
+  box-shadow: 0px 2px 7px 2px  rgba(153,153,153,0.9);
 }
 
-/*.footer .col-lg-3.col-md-3{
-    te
-}*/
-
 .footer ul li{
-    display: block;
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    margin-top: -10px;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
 
 .footer ul li h3{
-    max-width: 300px;
-    font-size: 1em;
-    padding: 10px 15px;
-    /*background-color: #;*/
-    /*background: linear-gradient(top, #68b12f, #50911e);*/
-    color: white;
-    border: 3px solid #ffffff;
-    border-radius: 5px;
-    /*margin-bottom: 10px;*/
-    /*margin-right: 40px;*/
-    display: block;
-    text-align: center;
+  max-width: 300px;
+  font-size: 1em;
+  padding: 10px 15px;
+  /*background-color: #;*/
+  /*background: linear-gradient(top, #68b12f, #50911e);*/
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  /*margin-bottom: 10px;*/
+  /*margin-right: 40px;*/
+  display: block;
+  text-align: center;
 }
 
 .footer ul li a{
-    color:#ffffff;
+  color:#ffffff;
 }
 
 .footer ul li a:hover{
-    color:#ffffcc;
-    text-decoration: underline;
+  color:#ffffcc;
+  text-decoration: underline;
 }
 
 .footer .col-lg-3:nth-child(1){
-    padding-left: 3%;
-    padding-top: 5px;
+  padding-left: 3%;
+  padding-top: 5px;
 }
 
 .video{
-    width: 90%
+  width: 90%
 }
 
 
