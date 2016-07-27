@@ -13,6 +13,7 @@ class CartoonsController < ApplicationController
   def show
     @category = Category.find(params[:category_id])
     @cartoons = Cartoon.order(:part).where(:category_id => params[:category_id])
+    @cartoon.update_attribute(:views, @cartoon.views + 1)
     @comment = Comment.new
     @rating = @cartoon.rating
   end
