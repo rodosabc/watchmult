@@ -5,13 +5,13 @@
       <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <%@random_cartoons.each do |cartoon|%>
             <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
-            <div class="item">
+            <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
               <div class="info">
                 <p><%=cartoon.title%></p>
                 <ul>
                   <li><%=cartoon.views%></li>
-                  <li><%=cartoon.rating%></li>
-                  <li><%=cartoon.comments.size%></li>
+                  <li><%=cartoon.rating.value.to_s%></li>
+                  <li><%=cartoon.comments.size.to_s%></li>
                 </ul>
               </div>
             </div>
@@ -24,14 +24,13 @@
       <div class="items col-lg-12">
         <%@random_animated.each do |cartoon|%>
             <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
-            <div class="item">
-              <%=image_tag(image_url(cartoon.preview))%>
+            <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
               <div class="info">
                 <p><%=cartoon.title%></p>
                 <ul>
                   <li><%=cartoon.views%></li>
-                  <li><%=cartoon.rating%></li>
-                  <li><%=cartoon.comments.size%></li>
+                  <li><%=cartoon.rating.value.to_s%></li>
+                  <li><%=cartoon.comments.size.to_s%></li>
                 </ul>
               </div>
             </div>
