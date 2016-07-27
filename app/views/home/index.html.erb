@@ -2,7 +2,7 @@
   <div class="container">
     <div class="catalog">
       <h2>Популярные мультфильмы</h2>
-      <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="items col-lg-12">
         <%@random_cartoons.each do |cartoon|%>
             <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
             <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
