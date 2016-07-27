@@ -5,8 +5,7 @@
       <div class="items col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <%@cartoons.each do |cartoon|%>
             <%=link_to category_cartoon_path(@category,cartoon) do%>
-                <div class="item">
-                  <%=image_tag(image_url(cartoon.preview))%>
+                <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
                   <div class="info">
                     <p><%=cartoon.title%></p>
                     <ul>
