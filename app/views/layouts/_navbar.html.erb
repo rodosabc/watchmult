@@ -10,10 +10,11 @@
         <%=link_to root_path do%>
             <li>Главная</li>
         <%end%>
-        <% @two_categories.each do |category| %>
-              <%=link_to category_categories_path(category) do%>
-                  <li><%=category.name%></li>
-              <%end%>
+        <%=link_to category_categories_path(@cartoon_cat) do%>
+            <li><%=@cartoon_cat.name%></li>
+        <%end%>
+        <%=link_to category_categories_path(@animated_cat) do%>
+            <li><%=@animated_cat.name%></li>
         <%end%>
       </ul>
     </div>

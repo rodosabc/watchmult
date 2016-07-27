@@ -5,20 +5,21 @@ class RatingsController < ApplicationController
 
   def update
     if !params[:one].nil?
-      @rating.update_attribute(:one, params[:one])
+      @rating.one = params[:one]
     end
     if !params[:two].nil?
-    @rating.update_attribute(:two, params[:two])
+      @rating.two = params[:two]
     end
     if !params[:three].nil?
-    @rating.update_attribute(:three, params[:three])
+      @rating.three = params[:three]
     end
     if !params[:four].nil?
-    @rating.update_attribute(:four, params[:four])
+      @rating.four = params[:four]
     end
     if !params[:five].nil?
-    @rating.update_attribute(:five, params[:five])
+      @rating.five = params[:five]
     end
+    @rating.update(rating_params)
     @rating.update_attribute(:value, refresh_rating)
     respond_to do |format|
       if @rating.update(rating_params)

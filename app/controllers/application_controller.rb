@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_nav_categories
-    @two_categories = Category.where(:category_id => nil)
+    two_categories = Category.where(:category_id => nil)
+    @cartoon_cat = two_categories.first
+    @animated_cat = two_categories.second
   end
 end
