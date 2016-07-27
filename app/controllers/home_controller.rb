@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    subcategories_cartoons =  Category.where(:category_id => Category.find_by(:name => 'Мультфильмы').id)
-    subcategories_animated =  Category.where(:category_id => Category.find_by(:name => 'Мультсериалы').id)
+    subcategories_cartoons =  Category.where(:parent_id => Category.find_by(:name => 'Мультфильмы').id)
+    subcategories_animated =  Category.where(:parent_id => Category.find_by(:name => 'Мультсериалы').id)
     cartoons = []
     animated = []
     subcategories_cartoons.each do  |category|
@@ -11,9 +11,11 @@ class HomeController < ApplicationController
     end
 
     subcategories_animated.each do  |category|
-      category.cartoons.ids.each {|i|
-        animated << i
-      }
+      category.subcategories.each do |sub|
+        sub.cartoons.ids.each {|i|
+          animated << i
+        }
+      end
     end
 
     ids_c = cartoons.shuffle[0..5]
