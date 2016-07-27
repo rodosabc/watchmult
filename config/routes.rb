@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   root :to => 'home#index'
-  resources :cartoons do
+  resources :cartoons,only: [] do
     resources :comments
     resources :ratings, only:[:update]
   end

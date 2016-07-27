@@ -23,7 +23,7 @@ class RatingsController < ApplicationController
     @rating.update_attribute(:value, refresh_rating)
     respond_to do |format|
       if @rating.update(rating_params)
-        format.html { redirect_to cartoon_path(@rating.cartoon), notice: 'rating was successfully updated.' }
+        format.html { redirect_to category_cartoon_path(Category.find(@rating.cartoon.category_id),@rating.cartoon), notice: 'rating was successfully updated.' }
         format.json { render :show, status: :ok, location: @rating }
       else
         format.html { render :edit }

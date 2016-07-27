@@ -4,13 +4,15 @@ class CartoonsController < ApplicationController
   # GET /cartoons
   # GET /cartoons.json
   def index
-    @cartoons = Cartoon.where(:category_id => params[:category_id])
+    @cartoons = Cartoon.order(:part).where(:category_id => params[:category_id])
     @category = Category.find(params[:category_id])
   end
 
   # GET /cartoons/1
   # GET /cartoons/1.json
   def show
+    @category = Category.find(params[:category_id])
+    @cartoons = Cartoon.order(:part).where(:category_id => params[:category_id])
     @comment = Comment.new
     @rating = @cartoon.rating
   end
