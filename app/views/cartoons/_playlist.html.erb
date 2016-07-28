@@ -1,8 +1,20 @@
 <ul>
     <%@cartoons.each do |cartoon| %>
-        <%=link_to category_cartoon_path(@category,cartoon) do%>
+
+      <%if @cartoon == cartoon%>
+          <% playing=true %>
+      <%else%>
+          <% playing=false %>
+      <%end%>
+        <%=link_to category_cartoon_path(@category,cartoon) , :playing => playing do%>
             <li style="background-image: url(<%=image_url(@cartoon.preview)%>);">
-              <div class="playFromList"><div class="btnPlay"></div></div><span><%=cartoon.title%></span>
+              <div class="playFromList">
+                <div class="btnPlay"></div>
+              </div>
+              <%if @cartoon == cartoon%>
+              <span class="playing">"Playing" </span>
+              <%end%>
+              <span><%=cartoon.title%></span>
             </li>
         <%end%>
     <%end%>
