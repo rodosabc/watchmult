@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :comments
     resources :ratings, only:[:update]
   end
-
   devise_for :users
   resources :categories,only: [] do
     resources :cartoons, only: [:index,:show]

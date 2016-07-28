@@ -6,7 +6,7 @@
       <%else%>
           <% playing=false %>
       <%end%>
-        <%=link_to category_cartoon_path(@category,cartoon) , :playing => playing do%>
+        <%=link_to category_cartoon_path(@category,cartoon), :playing => playing do%>
             <li style="background-image: url(<%=image_url(@cartoon.preview)%>);">
               <div class="playFromList">
                 <div class="btnPlay"></div>

@@ -7,6 +7,7 @@
 .row{
   margin: 0;
   padding: 0;
+  min-width: 1300px;
 }
 
 h2{
@@ -142,6 +143,7 @@ h2{
   unicode-bidi: bidi-override;
   direction: rtl;
   font-size: 3em;
+  transition: all 0.15s ease-out 0.15s;
 }
 .rating > span {
   display: inline-block;
@@ -155,7 +157,24 @@ h2{
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
-   color: #ffcc00;
+   color: #ff9900;
+   display: inline;
+   opacity: 0.7;
+}
+
+.rating > span:before{
+  content: "\2605";
+  position: absolute;
+  color: #ffcc00;
+  display: none;
+}
+
+.yourRating{
+  transform: scale(1.1);
+}
+
+.offhiden:before{
+  display: inline !important;
 }
 
 .views{
@@ -401,7 +420,8 @@ width: 6px;
 }
 
 .video{
-  width: 90%
+  width: 90%;
+  text-align: center;
 }
 
 

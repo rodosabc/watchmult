@@ -30,6 +30,7 @@ $(document).ready(function() {
         video.pause();
         controls.playpause.html('<%=image_tag(image_url('media-play-symbol.svg'))%>');
         controls.playpause.toggleClass("paused");
+        $('[plaing=true]').next().click();
     });
 
     video.addEventListener("play", function() {
