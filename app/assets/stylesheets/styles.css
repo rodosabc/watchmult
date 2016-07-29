@@ -22,6 +22,10 @@ h2{
   box-shadow: -2px 0 7px 2px  rgba(153,153,153,0.9);
 }
 
+.items a{
+  text-decoration: none;
+}
+
 .nav-main .container div{
   display: inline-block;
 }
@@ -167,10 +171,11 @@ h2{
   position: absolute;
   color: #ffcc00;
   display: none;
+  transition: all 0.15s ease-out 0.15s;
 }
 
-.yourRating{
-  transform: scale(1.1);
+.yourRating:before{
+  transform: scale(1.3);
 }
 
 .offhiden:before{
