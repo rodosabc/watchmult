@@ -4,6 +4,7 @@ class RatingsController < ApplicationController
   end
 
   def update
+    @chosen = nil
     if !params[:one].nil?
       @rating.one = params[:one]
     end
