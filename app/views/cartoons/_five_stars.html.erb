@@ -37,12 +37,3 @@
     <span class="offhiden" rating="1">&#9734</span>
 <%end%>
 
-<%= form_for [@cartoon,@rating], method: :put do |f|%>
-    <%=f.radio_button :one, @rating.one + 1%>1
-    <%=f.radio_button :two, @rating.two + 1%>2
-    <%=f.radio_button :three, @rating.three + 1 %>3
-    <%=f.radio_button :four, @rating.four + 1%>4
-    <%=f.radio_button :five, @rating.five + 1%>5
-    <%= f.submit "Save" %>
-<% end %>
-

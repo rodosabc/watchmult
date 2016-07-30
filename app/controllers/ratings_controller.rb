@@ -5,6 +5,7 @@ class RatingsController < ApplicationController
 
   def update
     @chosen = nil
+    @rating.value = params[:mark]
     if !params[:one].nil?
       @rating.one = params[:one]
     end
@@ -26,6 +27,7 @@ class RatingsController < ApplicationController
       if @rating.update(rating_params)
         format.html { redirect_to category_cartoon_path(Category.find(@rating.cartoon.category_id),@rating.cartoon), notice: 'rating was successfully updated.' }
         format.json { render :show, status: :ok, location: @rating }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
@@ -39,7 +41,7 @@ class RatingsController < ApplicationController
   end
 
   def set_rating
-    @rating = Rating.find(params[:id])
+    @rating = Rating.find(params[:id,:mark])
   end
 
   def refresh_rating
