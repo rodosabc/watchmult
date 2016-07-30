@@ -9,7 +9,7 @@ $(document).ready(function(){
     rating.click(function(e){
         if(unlock.attr('clickOne') === 'true'){
             var rait = $(this).attr('rating');
-            rait = rait.serialize();
+            rait = $(rait).serialize();
             $.ajax({
                 type: "PUT",
                 url: unlock.attr('action'),
