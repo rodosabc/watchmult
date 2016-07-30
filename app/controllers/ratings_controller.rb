@@ -4,39 +4,29 @@ class RatingsController < ApplicationController
   end
 
   def update
-    if !params[:one].nil?
-      @rating.one = params[:one]
+    if params[:rating][:mark] == "1"
+      @rating.update_attribute(:one, @rating.one + 1)
     end
-    if !params[:two].nil?
-      @rating.two = params[:two]
+    if params[:rating][:mark] == "2"
+      @rating.update_attribute(:two, @rating.two + 1)
     end
-    if !params[:three].nil?
-      @rating.three = params[:three]
+    if params[:rating][:mark] == "3"
+      @rating.update_attribute(:three, @rating.three + 1)
     end
-    if !params[:four].nil?
-      @rating.four = params[:four]
+    if params[:rating][:mark] == "4"
+      @rating.update_attribute(:four, @rating.four + 1)
     end
-    if !params[:five].nil?
-      @rating.five = params[:five]
+    if params[:rating][:mark] == "5"
+      @rating.update_attribute(:five, @rating.five + 1)
     end
-    @rating.update(rating_params)
     @rating.update_attribute(:value, refresh_rating)
-    respond_to do |format|
-      if @rating.update(rating_params)
-        format.html { redirect_to category_cartoon_path(Category.find(@rating.cartoon.category_id),@rating.cartoon), notice: 'rating was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rating }
-      else
-        format.html { render :edit }
-        format.json { render json: @rating.errors, status: :unprocessable_entity }
-      end
-    end
+    @rating.update(rating_params)
   end
 
   private
   def rating_params
-    params.require(:rating).permit(:value,:one,:two,:three,:four,:five)
+    params.require(:rating).permit(:value,:one,:two,:three,:four,:five,:mark)
   end
-
   def set_rating
     @rating = Rating.find(params[:id])
   end
