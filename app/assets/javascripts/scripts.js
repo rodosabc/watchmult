@@ -13,11 +13,9 @@ $(document).ready(function(){
                 type: "PUT",
                 url: unlock.attr('action'),
                 data: { rating:{mark: rait} },
-                success: function(){
-                    unlock.attr('clickOne', 'false');
-                    nextChld(this);
-                }
             })
+            unlock.attr('clickOne', 'false');
+            nextChld(this);
         }
     })
 

@@ -33,6 +33,6 @@ class RatingsController < ApplicationController
 
   def refresh_rating
     sum = @rating.five + @rating.four + @rating.three + @rating.two + @rating.one
-    (5*@rating.five + 4*@rating.four + 3*@rating.three + 2*@rating.two + 3*@rating.one).to_f / sum
+    (5*@rating.five + 4*@rating.four + 3*@rating.three + 2*@rating.two + @rating.one).to_f / sum
   end
 end
