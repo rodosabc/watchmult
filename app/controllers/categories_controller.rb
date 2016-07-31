@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by(:category_url_name => params[:category_url_name])
     @categories = @category.subcategories
   end
 
@@ -12,6 +12,6 @@ class CategoriesController < ApplicationController
   private
 
   def cartegory_params
-    params.require(:category).permit(:category_id)
+    params.require(:category).permit(:url_name)
   end
 end

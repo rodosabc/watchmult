@@ -3,8 +3,8 @@
     <div class="catalog">
       <h2>Популярные мультфильмы</h2>
       <div class="items col-lg-12">
-        <%@random_cartoons.each do |cartoon|%>
-            <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
+        <%@cartoon_cat.cartoons.take(6).each do |cartoon|%>
+            <%=link_to cartoon_path(cartoon.category.category_url_name,cartoon.url_name) do%>
             <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
               <div class="info">
                 <p><%=cartoon.title%></p>
@@ -23,7 +23,7 @@
       <h2>Популярные мультсериалы</h2>
       <div class="items col-lg-12">
         <%@random_animated.each do |cartoon|%>
-            <%=link_to category_cartoon_path(cartoon.category,cartoon) do%>
+            <%=link_to cartoon_path(cartoon.category.category_url_name,cartoon.url_name) do%>
             <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
               <div class="info">
                 <p><%=cartoon.title%></p>

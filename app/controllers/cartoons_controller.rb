@@ -4,15 +4,15 @@ class CartoonsController < ApplicationController
   # GET /cartoons
   # GET /cartoons.json
   def index
-    @cartoons = Cartoon.order(:part).where(:category_id => params[:category_id])
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by(:category_url_name => params[:category_url_name])
+    @cartoons = Cartoon.order(:part).where(:category_id => @category.id)
   end
 
   # GET /cartoons/1
   # GET /cartoons/1.json
   def show
-    @category = Category.find(params[:category_id])
-    @cartoons = Cartoon.order(:part).where(:category_id => params[:category_id])
+    @category = Category.find_by(:category_url_name => params[:category_url_name])
+    @cartoons = Cartoon.order(:part).where(:category_id => @category.id)
     @cartoon.update_attribute(:views, @cartoon.views + 1)
     @comment = Comment.new
     @rating = @cartoon.rating
@@ -70,7 +70,7 @@ class CartoonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cartoon
-      @cartoon = Cartoon.find(params[:id])
+      @cartoon = Cartoon.find_by(:url_name => params[:url_name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

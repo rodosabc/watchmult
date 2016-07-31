@@ -7,13 +7,15 @@
     </div>
     <div class="menu">
       <ul>
-        <%=link_to root_path do%>
-            <li>Главная</li>
+        <%=link_to root_path  do%>
+            <li>
+              Главная
+            </li>
         <%end%>
-        <%=link_to category_categories_path(@cartoon_cat) do%>
+        <%=link_to cartoons_path(@cartoon_cat.category_url_name) do%>
             <li><%=@cartoon_cat.name%></li>
         <%end%>
-        <%=link_to category_categories_path(@animated_cat) do%>
+        <%=link_to categories_path(@animated_cat.category_url_name) do%>
             <li><%=@animated_cat.name%></li>
         <%end%>
       </ul>

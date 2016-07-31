@@ -13,10 +13,8 @@ Rails.application.routes.draw do
     resources :ratings, only:[:update]
   end
   devise_for :users
-  resources :categories,only: [] do
-    resources :cartoons, only: [:index,:show]
-  end
-  resources :categories do
-    resources :categories, only:[:index],path: '/'
-  end
+
+  get 'categories/:category_url_name', to: 'categories#index', as: :categories
+  get ':category_url_name', to: 'cartoons#index', as: :cartoons
+  get ':category_url_name/:url_name', to: 'cartoons#show', as: :cartoon
 end

@@ -4,7 +4,7 @@
       <h2><%=@category.name%></h2>
       <div class="items col-lg-12">
         <%@cartoons.each do |cartoon|%>
-            <%=link_to category_cartoon_path(@category,cartoon) do%>
+            <%=link_to cartoon_path(@category.category_url_name,cartoon.url_name) do%>
                 <div class="item" style="background-image: url(<%=image_url(cartoon.preview)%>);">
                   <div class="info">
                     <p><%=cartoon.title%></p>

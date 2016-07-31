@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730020317) do
+ActiveRecord::Schema.define(version: 20160731035607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160730020317) do
     t.datetime "preview_updated_at"
     t.integer  "part"
     t.integer  "category_id"
+    t.string   "url_name"
     t.index ["category_id"], name: "index_cartoons_on_category_id", using: :btree
   end
 
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160730020317) do
     t.string   "preview_content_type"
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
+    t.string   "category_url_name"
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   end
 

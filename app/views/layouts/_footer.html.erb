@@ -10,7 +10,7 @@
         <%3.times do%>
             <%category = @animated_cat.subcategories.sample %>
         <li>
-          <%=link_to category.name, category_categories_path(category)%>
+          <%=link_to category.name, categories_path(category.category_url_name)%>
         </li>
         <%end%>
       </ul>
@@ -18,10 +18,9 @@
     <div class="col-lg-3">
       <ul>
         <li><h3>Мультфильмы</h3></li>
-        <%3.times do%>
-            <%category = @cartoon_cat.subcategories.sample %>
+        <%@cartoon_cat.cartoons.take(3).each do |cartoon|%>
         <li>
-          <%=link_to category.name, category_categories_path(category)%>
+          <%=link_to cartoon.title, cartoon_path(@cartoon_cat.category_url_name,cartoon.url_name)%>
         </li>
         <%end%>
       </ul>

@@ -5,7 +5,7 @@
       <div class="items col-lg-12">
         <%@categories.each do |subcategory|%>
             <%if subcategory.cartoons.any?%>
-              <%=link_to category_cartoons_path(subcategory) do%>
+              <%=link_to cartoons_path(subcategory.category_url_name) do%>
                   <div class="item">
                     <div class="info">
                       <p><%=subcategory.name%></p>
@@ -13,7 +13,7 @@
                   </div>
               <%end%>
             <%else%>
-                <%=link_to category_path(subcategory) do%>
+                <%=link_to categories_path(subcategory.category_url_name) do%>
                     <div class="item" >
                       <div class="info">
                         <p><%=subcategory.name%></p>

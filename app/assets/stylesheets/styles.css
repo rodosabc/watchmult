@@ -37,7 +37,7 @@ h2{
 .menu ul a{
   display: inline-block;
   margin-right: 15px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   height: 55px;
   width: 130px;
   text-align: center;
@@ -49,11 +49,14 @@ h2{
 
 .menu ul a:hover{
   border-bottom: 5px solid #ff6600;
-  text-shadow: 0 0 1px #666666;
 }
 
 .menu ul a li{
   list-style-type: none;
+}
+
+.active{
+    border-bottom: 5px solid #ff6600;
 }
 
 .catalog{
