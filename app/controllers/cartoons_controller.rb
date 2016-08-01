@@ -11,6 +11,10 @@ class CartoonsController < ApplicationController
   # GET /cartoons/1
   # GET /cartoons/1.json
   def show
+    set_meta_tags title: @cartoon.title,
+                  keywords: @cartoon.keywords,
+                  description: @cartoon.description
+
     @category = Category.find_by(:category_url_name => params[:category_url_name])
     @cartoons = Cartoon.order(:part).where(:category_id => @category.id)
     @cartoon.update_attribute(:views, @cartoon.views + 1)

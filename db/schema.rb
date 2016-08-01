@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731035607) do
+ActiveRecord::Schema.define(version: 20160801033033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cartoons", force: :cascade do |t|
     t.string   "title"
-    t.string   "description"
     t.string   "cartoon_url"
     t.integer  "views"
     t.datetime "created_at",           null: false
@@ -29,6 +28,9 @@ ActiveRecord::Schema.define(version: 20160731035607) do
     t.integer  "part"
     t.integer  "category_id"
     t.string   "url_name"
+    t.text     "cartoon_description"
+    t.text     "description"
+    t.text     "keywords"
     t.index ["category_id"], name: "index_cartoons_on_category_id", using: :btree
   end
 
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160731035607) do
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
     t.string   "category_url_name"
+    t.text     "description"
+    t.text     "keywords"
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   end
 

@@ -36,7 +36,7 @@ Category.create(:name => 'Family guy',:category_url_name => 'family-guy', :paren
 
 Cartoon.create!(:title => "Кирилл #{i}",
                 :url_name => "kirill-#{i}",
-                :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                :cartoon_description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
               nisl erat, lacinia et enim vitae, vulputate elementum ante. Pellentesque habitant
                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
@@ -52,7 +52,9 @@ Cartoon.create!(:title => "Кирилл #{i}",
                 :cartoon_url => 'http://vk.com',
                 :views => 0,
                 :category_id => Category.find_by(:name => 'Мультфильмы').id,
-                :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"))
+                :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"),
+                :description => "Description for Кирилл #{i}",
+                :keywords => "Keyword 1 Кирилл #{i},Keyword 2 Кирилл #{i},Keyword 3 Кирилл #{i}")
   Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Кирилл #{i}").id)
 end
 
@@ -60,7 +62,7 @@ end
 
   Cartoon.create!(:title => "Игорь #{i}",
                   :url_name => "igor-#{i}",
-                  :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  :cartoon_description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
               nisl erat, lacinia et enim vitae, vulputate elementum ante. Pellentesque habitant
                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
@@ -76,7 +78,9 @@ end
                   :cartoon_url => 'http://vk.com',
                   :views => 0,
                   :category_id => Category.find_by(:name => 'Мультфильмы').id,
-                  :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"))
+                  :preview => File.new("#{Rails.root}/app/assets/images/heric.jpg"),
+                  :description => "Description for Игорь #{i}",
+                  :keywords => "Keyword 1 Игорь #{i},Keyword 2 Игорь #{i},Keyword 3 Игорь #{i}")
   Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Игорь #{i}").id)
 end
 
@@ -86,7 +90,7 @@ end
 4.times do |i|
   Cartoon.create!(:title => "Человек паук 1 сезон #{i} серия",
                   :url_name => "spider-man-s1-e#{i}",
-                  :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  :cartoon_description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nam faucibus dui in tellus vestibulum, eu gravida quam pellentesque. Quisque
               nisl erat, lacinia et enim vitae, vulputate elementum ante. Pellentesque habitant
                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse
@@ -102,7 +106,9 @@ end
                   :cartoon_url => 'http://vk.com',
                   :views => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 1s').id,
-                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
+                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"),
+                  :description => "Description for Человек паук 1 #{i}",
+                  :keywords => "Keyword 1 Человек паук 1 #{i},Keyword 2 Человек паук 1 #{i},Keyword 3 Человек паук 1 #{i}")
   Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Человек паук 1 сезон #{i} серия").id)
 end
 
@@ -125,6 +131,8 @@ end
                   :cartoon_url => 'http://vk.com',
                   :views => 0,
                   :category_id => Category.find_by(:name => 'Spider-man 2s').id,
-                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"))
+                  :preview => File.new("#{Rails.root}/app/assets/images/spider1.jpg"),
+                  :description => "Description for Человек паук 2 #{i}",
+                  :keywords => "Keyword 1 Человек паук 2 #{i},Keyword 2 Человек паук 2 #{i},Keyword 3 Человек паук 2 #{i}")
   Rating.create!(:cartoon_id => Cartoon.find_by(:title => "Человек паук 2 сезон #{i} серия").id)
 end
