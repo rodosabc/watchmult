@@ -31,7 +31,8 @@ $(document).ready(function() {
         controls.playpause.html('<%=image_tag(image_url('media-play-symbol.svg'))%>');
         controls.playpause.toggleClass("paused");
         var href = $('[playing=true]').next().attr('href');
-        location = href;
+        if (typeof href === 'string')
+          location = href;
     });
 
     video.addEventListener("play", function() {
