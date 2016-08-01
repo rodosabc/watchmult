@@ -13,7 +13,12 @@ Rails.application.routes.draw do
     resources :comments
     resources :ratings, only:[:update]
   end
-  devise_for :users
+  devise_for :users, :skip => [:sessions]
+  as :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session
+    delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 
   get 'categories/:category_url_name', to: 'categories#index', as: :categories
   get ':category_url_name', to: 'cartoons#index', as: :cartoons
