@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
   def index
+    set_meta_tags title: @category.name,
+                 keywords: @category.keywords,
+                 description: @category.description
     @category = Category.find_by(:category_url_name => params[:category_url_name])
     @categories = @category.subcategories
   end

@@ -5,6 +5,9 @@ class CartoonsController < ApplicationController
   # GET /cartoons.json
   def index
     @category = Category.find_by(:category_url_name => params[:category_url_name])
+    set_meta_tags title: @category.name,
+                  keywords: @category.keywords,
+                  description: @category.description
     @cartoons = Cartoon.order(:part).where(:category_id => @category.id)
   end
 

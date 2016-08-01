@@ -23,14 +23,40 @@ User.create(:email => 'another_admin@example.com',
             :password_confirmation => '123456',
             :admin => true)
 
-Category.create(:name => 'Мультфильмы',:category_url_name => 'cartoons')
+Category.create(:name => 'Мультфильмы',
+                :category_url_name => 'cartoons',
+                :description => "Description for cartoons category",
+                :keywords => "не, хочу, это, больше")
 
-Category.create(:name => 'Мультсериалы',:category_url_name => 'animated-series')
-Category.create(:name => 'Spider-man',:category_url_name => 'spider-man', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Spider-man 1s',:category_url_name => 'spider-man-s1', :parent_id => Category.find_by(:name => 'Spider-man').id)
-Category.create(:name => 'Spider-man 2s',:category_url_name => 'spider-man-s2', :parent_id => Category.find_by(:name => 'Spider-man').id)
-Category.create(:name => 'Futurama',:category_url_name => 'futurama', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
-Category.create(:name => 'Family guy',:category_url_name => 'family-guy', :parent_id => Category.find_by(:name => 'Мультсериалы').id)
+Category.create(:name => 'Мультсериалы',
+                :category_url_name => 'animated-series',
+                :description => "Description for animated series category",
+                :keywords => "не, хочу, это, больше")
+Category.create(:name => 'Spider-man',
+                :category_url_name => 'spider-man',
+                :parent_id => Category.find_by(:name => 'Мультсериалы').id,
+                :description => "Description for spider-man category",
+                :keywords => "не, хочу, это, больше")
+Category.create(:name => 'Spider-man 1s',
+                :category_url_name => 'spider-man-s1',
+                :parent_id => Category.find_by(:name => 'Spider-man').id,
+                :description => "Description for spider-man-s1 category",
+                :keywords => "не, хочу, это, больше")
+Category.create(:name => 'Spider-man 2s',
+                :category_url_name => 'spider-man-s2',
+                :parent_id => Category.find_by(:name => 'Spider-man').id,
+                :description => "Description for spider-man-s2 category",
+                :keywords => "не, хочу, это, больше")
+Category.create(:name => 'Futurama',
+                :category_url_name => 'futurama',
+                :parent_id => Category.find_by(:name => 'Мультсериалы').id,
+                :description => "Description for futurama category",
+                :keywords => "не, хочу, это, больше")
+Category.create(:name => 'Family guy',
+                :category_url_name => 'family-guy',
+                :parent_id => Category.find_by(:name => 'Мультсериалы').id,
+                :description => "Description for family-guy category",
+                :keywords => "не, хочу, это, больше")
 
 5.times do |i|
 
