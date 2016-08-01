@@ -35,7 +35,9 @@ gem 'devise'
 
 # Use Paperclip for images and other things
 gem 'paperclip'
-
+# Use rails_admin? bro
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
