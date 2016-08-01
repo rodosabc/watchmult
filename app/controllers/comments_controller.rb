@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     category = @cartoon.category
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to category_cartoon_path(category,@cartoon), notice: 'Comment was successfully created.' }
+        format.html { redirect_to cartoon_path(category.category_url_name,@cartoon.url_name), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { redirect_to root_path, notice: 'Comment was not successfully created.' }

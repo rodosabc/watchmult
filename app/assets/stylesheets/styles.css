@@ -34,6 +34,10 @@ h2{
   width: 150px;
 }
 
+.menu ul{
+  padding-left: 10px; 
+}
+
 .menu ul a{
   display: inline-block;
   margin-right: 15px;
@@ -51,12 +55,12 @@ h2{
   border-bottom: 5px solid #ff6600;
 }
 
-.menu ul a li{
-  list-style-type: none;
+.active{
+  border-bottom: 5px solid #ff6600;
 }
 
-.active{
-    border-bottom: 5px solid #ff6600;
+.menu ul a li{
+  list-style-type: none;
 }
 
 .catalog{
@@ -166,7 +170,6 @@ h2{
    position: absolute;
    color: #ff9900;
    display: inline;
-   opacity: 0.7;
 }
 
 .rating > span:before{
